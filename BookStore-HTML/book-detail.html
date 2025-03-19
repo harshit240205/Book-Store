@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Gatsby - BookStore</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">BookStore</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html">Books</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="book-detail">
+            <!-- Book Image -->
+            <div class="book-image">
+                <img src="https://m.media-amazon.com/images/I/71FTb9X6wsL._AC_UF1000,1000_QL80_.jpg" alt="The Great Gatsby">
+            </div>
+
+            <!-- Book Details -->
+            <div class="book-info">
+                <h1 class="book-title">The Great Gatsby</h1>
+                <p class="book-author">by F. Scott Fitzgerald</p>
+                <p class="book-category">Category: Classic</p>
+                
+                <div class="rating">
+                    ★★★★☆
+                    <span class="reviews">(128 reviews)</span>
+                </div>
+
+                <p class="book-price">$9.99</p>
+                
+                <div class="quantity">
+                    <button onclick="decrementQuantity()">-</button>
+                    <input type="number" value="1" min="1" id="quantity">
+                    <button onclick="incrementQuantity()">+</button>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%;" onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+                <div class="book-description">
+                    <h2>Description</h2>
+                    <p>The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan. Set against the backdrop of the Jazz Age in the 1920s, this masterpiece of American fiction captures the spirit of an era and explores universal themes of love, wealth, and the American Dream.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>BookStore is your one-stop destination for all your reading needs. We offer a wide selection of books across various genres.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>Email: info@bookstore.com</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Address: 123 Book Street</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 BookStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function incrementQuantity() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 1;
+        }
+
+        function decrementQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 1) {
+                input.value = parseInt(input.value) - 1;
+            }
+        }
+
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            alert(`Added ${quantity} copies of "The Great Gatsby" to cart!`);
+        }
+    </script>
+</body>
+</html> 
